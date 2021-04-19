@@ -3,7 +3,7 @@ export function VistaReglas() {
 
   const htmlReglas = `
     <h2> ¡Tu registro ha sido exitoso! </h2>
-    <p> Para continuar, debes dar click en el botón para aceptar las reglas de la comunidad </p>
+    <p id="mensajeRegistro"> Para continuar, debes dar click en el botón para aceptar las reglas de la comunidad </p>
     <h1>Reglas de la comunidad HUC</h1>
     <li><details><summary>Las publicaciones deben llevar fuentes confiables</summary>
      <p> ¡No aceptaremos FAKE NEWS! Asegúrate de que tu publicación contenga una fuente confiable y veraz, no medios de comunicación desconocidos. (Como notas sobre astronomía que aseguran confirmación de la NASA... y ellos no han publicado sobre ello.)</p>
