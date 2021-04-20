@@ -1,32 +1,25 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
+body {
+    background-image: url(./img/huc.jpg);
+    background-attachment: fixed;
+}
+
   .grid-container {
     display: grid;
     grid-template-areas: 'header header header header' 'column1 main main column2' 'footer footer footer footer'
   }
   .grid-container div {
-   
-    padding: 5vmin; 
+    padding: 3vh; 
     color: black;
     text-align: center;
-    background-color: #EDF0F2;
   }
-  .header {
-    grid-area: header;
-    background-image: url(./img/huc.jpg);
-    background-size: 100% auto; 
-    height: 25vh;
-  }
-  
   .colum1 {
     grid-area: column1;
   }
   
   .main {
      grid-area: main;
-    justify-items: start;
+    justify-items: center;
+    margin-top: 10vh;
   }
   
   .colum2 {
@@ -36,8 +29,8 @@
   .inputIngreso{
     border: 0;
     border-bottom: 1px solid black;
-    background-color:#EDF0F2;
-    padding: 5px 3px;
+    background-color:transparent;
+    padding: 20px 10px;
     width: 50vmin;
   }
 
@@ -67,16 +60,31 @@
     width: 50vmin;
   }
 
+  form {
+    background: rgba(235, 228, 228, 0.82);
+    width: 30vw;
+    margin-left: 20vw;
+  }
+
+  #reglasHuc {
+      background-color:rgba(235, 228, 228, 0.82) ;
+  }
   .footer {
     grid-area: footer;
   }
+  details {
+      width: 48vw;
+      margin-right: 0;
+  }
   ol {
     text-align: start;
+    justify-content: flex-start;
   }
   li {
-    padding: 2vh;
-    text-align: start;
-}
+      padding: 2vh;
+      text-align: start;
+      margin-left: 5vw;
+  }
 #buttonReglas {
-  margin-top: 5vh;
+    margin-top: 5vh;
 }

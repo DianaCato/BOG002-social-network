@@ -1,10 +1,7 @@
-export function VistaReglas() {
-  const reglas = document.createElement("ol");
+export default function VistaReglas() {
+  const reglas = document.createElement('ol');
 
-  const htmlReglas = `
-    <h2> ¡Tu registro ha sido exitoso! </h2>
-    <p id="mensajeRegistro"> Para continuar, debes dar click en el botón para aceptar las reglas de la comunidad </p>
-    <h1>Reglas de la comunidad HUC</h1>
+  const htmlReglas = ` <div id= "reglasHuc"><h1>Reglas de la comunidad HUC</h1>
     <li><details><summary>Las publicaciones deben llevar fuentes confiables</summary>
      <p> ¡No aceptaremos FAKE NEWS! Asegúrate de que tu publicación contenga una fuente confiable y veraz, no medios de comunicación desconocidos. (Como notas sobre astronomía que aseguran confirmación de la NASA... y ellos no han publicado sobre ello.)</p>
      </details></li>
@@ -23,7 +20,9 @@ export function VistaReglas() {
      <li><details><summary>No aceptamos publicaciones sobre drogas</summary>
      <p>Las publicaciones sobre drogas no van acorde con la extensión, además de ser contenido denunciable.</p></details></li>
     <li><details><summary>Sólo post de relevancia histórica o científica</summary><p>Las publicaciones que carezcan de ello no serán aceptadas, no queremos afectar la calidad del contenido del grupo </p></details></li>
-    `;
+    <button id="buttonReglas">Aceptar</button>
+    </div>`;
   reglas.innerHTML = htmlReglas;
+  
   return reglas;
 }
