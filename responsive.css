@@ -1,6 +1,7 @@
 body {
     background-image: url(./img/huc.jpg);
     background-attachment: fixed;
+    background-size: cover;
 }
 
   .grid-container {
