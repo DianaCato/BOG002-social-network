@@ -1,20 +1,18 @@
 // aqui exportaras las funciones que necesites
 
+import { crearUsuario, providerFacebook, providerGoogle } from '../firebaseController/firebaseFunctions.js';
 import irReglas from './redireccionReglas.js';
 
 // creando cuenta de usuario
 export function registrar() {
   const informacion = document.getElementsByClassName('formInformacion');
-  const errorUsuario = document.getElementsByClassName('errorRegistro');
+
   document.addEventListener('click', (e) => {
     if (e.target.matches('#btnR')) {
-      console.log(errorUsuario);
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(informacion[0][1].value, informacion[0][2].value)
-        .then((userCredential) => {
+      crearUsuario(informacion[0][1].value, informacion[0][2].value)
+        .then(() => {
           // Signed in
-          const { user } = userCredential;
+
           irReglas();
         })
         .catch((error) => {
@@ -31,17 +29,12 @@ export function registroGoogle() {
 
   botonGoogle.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('click');
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        console.log('google sign in');
+    providerGoogle(provider)
+      .then(() => {
         irReglas();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
       });
   });
 }
@@ -52,17 +45,12 @@ export function registroFacebook() {
 
   botonFacebook.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('click');
     const provider = new firebase.auth.FacebookAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        console.log('Facebook sign in');
+    providerFacebook(provider)
+      .then(() => {
         irReglas();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
       });
   });
 }

@@ -12,7 +12,9 @@ body {
     padding: 3vh; 
     color: black;
     text-align: center;
+     
   }
+
   .colum1 {
     grid-area: column1;
   }
@@ -41,7 +43,7 @@ body {
     margin: 10px auto;
     border: 0.5px solid rgb(1, 12, 15);
     padding: 10px;
-    background: white;
+    background: #5F4053;
     border-radius: 10px;
     color: rgb(1, 12, 15);
     font-size: 16px;
@@ -51,6 +53,15 @@ body {
   button:hover {
     color: white;
     background-color: rgb(1, 12, 15);
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
 }
   
   #btnI{
@@ -72,6 +83,47 @@ body {
     width: 50vmin;
   }
 
+  .icono {
+    max-width: 25px;
+    vertical-align: middle;
+    padding: 5px;
+    display: inline-block;
+}
+
+.login {
+  padding: 0 10px;
+  background-color: white;
+  display: block;
+  border-radius: 10px;
+  margin: 10px;
+  width: 250px;
+  cursor: pointer;
+    
+}
+.login {
+  margin: 10px auto;
+}
+
+.login p {
+  margin: 1em;
+  display: inline-block;
+  color: #737373
+} 
+
+.login.facebook p{
+  margin: 1em 0.4em;
+}
+
+/* .parrafos {
+  display: block;
+  text-align: center;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
+} */
+
   form {
     background: rgba(235, 228, 228, 0.82);
     width: 30vw;
@@ -80,7 +132,8 @@ body {
 
   #reglasHuc {
       background-color:rgba(235, 228, 228, 0.82) ;
-  }
+      
+    }
   
   details {
       width: 48vw;
