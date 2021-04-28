@@ -42,18 +42,7 @@ export function registroGoogle() {
   });
 }
 
-// export function logout() {
-//   firebase
-//     .auth()
-//     .signOut()
-//     .then(function () {
-//       // Sign-out successful.
-//     })
-//     .catch(function (error) {
-//       // An error happened.
-//       // console.log(error);
-//     });
-// }
+/
 
   botonFacebook.addEventListener('click', (e) => {
     e.preventDefault();
