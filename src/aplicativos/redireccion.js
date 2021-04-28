@@ -37,7 +37,6 @@ export function cerrarSesion() {
           document.getElementById("main").innerHTML = "";
           document.getElementById("header").innerHTML = "";
           ingresar();
-          document.getElementById("main").appendChild(CrearFormulario());
         })
         .catch(function (error) {
           document.getElementById("main").innerHTML = error;
