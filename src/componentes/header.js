@@ -18,11 +18,4 @@ export default function crearHeader() {
   `;
   headerDiv.innerHTML = htmlheader;
   document.getElementById("header").appendChild(headerDiv);
-  headerDiv.style.display = "flex";
-  headerDiv.style.position = "fixed";
-  headerDiv.style.width = "100%";
-  headerDiv.style.height = "80px";
-  headerDiv.style.top = "0";
-  headerDiv.style.left = "0";
-  headerDiv.style.backgroundColor = "#4B656E";
 }
