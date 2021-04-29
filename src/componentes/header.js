@@ -7,7 +7,7 @@ export default function crearHeader() {
   <img id="logo" src="img/logo-huc.png" alt="logo">
   </div>
   <details class="menu">
-      <summary> Nickname </summary>
+      <summary class="nave"> Nickname </summary>
         <ul>
           <li><a href='#crear-publicacion'> Aportar</a></li>
           <li><a href='#social'> Social</a></li>    
