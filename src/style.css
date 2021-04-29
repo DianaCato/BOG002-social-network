@@ -18,7 +18,8 @@
     background-size: 100% auto; 
     height: 25vh;
   }
-  
+
+   
   .colum1 {
     grid-area: column1;
   }
@@ -31,7 +32,7 @@
   .colum2 {
     grid-area: column2;
   }
-  
+
   .inputIngreso{
     width: 250px;
     display: block;
@@ -124,15 +125,7 @@ ol {
   text-align: start;  
 }
 
-#logo {
-  max-height: 90px;
-  display: block;
-  margin: auto;
-}
-
-
-
-  .footer {
+.footer {
     grid-area: footer;
   }
   

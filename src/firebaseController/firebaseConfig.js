@@ -18,6 +18,7 @@ export default function firebaseInitialize() {
     .then(() => {
       // la sesión se mantiene iniciada
     });
+  const store = firebase.firestore();
 }
 
-// export const store = firebase.firestore();
+// const store = firebase.firestore();

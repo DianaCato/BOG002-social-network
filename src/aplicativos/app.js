@@ -1,4 +1,5 @@
 import {
+  crearUsuario,
   providerFacebook,
   providerGoogle,
 } from "../firebaseController/firebaseFunctions.js";
