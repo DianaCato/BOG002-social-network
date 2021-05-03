@@ -1,5 +1,5 @@
 import crearHeader from "./header.js";
-// import firestoreInitialize from "../firebaseController/firestore.js";
+import nuevoPost from "../aplicativos/crearPost.js";
 
 export default function crearPost() {
   document.body.style.backgroundColor = "#DCE0DF";
@@ -25,25 +25,4 @@ export default function crearPost() {
   const postContainer = document.createElement("div");
   postContainer.innerHTML = htmlPost;
   document.getElementById("main").appendChild(postContainer);
-
-  const db = firebase.firestore();
-
-  const taskForm = document.getElementById("task-form");
-
-  const savePost = (title, description) =>
-    db.collection("post").doc().set({
-      title,
-      description,
-    });
-
-  taskForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const title = taskForm.titulo.value;
-    const description = taskForm.descripcion.value;
-
-    await savePost(title, description);
-
-    taskForm.reset();
-  });
 }
