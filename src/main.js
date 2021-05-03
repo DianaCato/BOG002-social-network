@@ -22,6 +22,7 @@ registrar();
 registroGoogle();
 registroFacebook();
 ingresar();
+cerrarSesion();
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("a")) {
@@ -47,6 +48,3 @@ document.addEventListener("click", (e) => {
     crearPost();
   }
 });
-
-// cerrar sesión
-cerrarSesion();

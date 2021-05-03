@@ -1,4 +1,5 @@
 import crearHeader from "./header.js";
+// import firestoreInitialize from "../firebaseController/firestore.js";
 
 export default function crearPost() {
   document.body.style.backgroundColor = "#DCE0DF";
@@ -9,10 +10,10 @@ export default function crearPost() {
      <div class="card-body">       
      <form id="task-form">
      <div class="form-group">
-     <input type="text" id="titulo" class="form-control" placeholder="Task Title" autofocus>
+     <input type="text" id="titulo" class="form-control" placeholder="Title">
      </div>
      <div class="form-group">
-     <textarea id="description" rows="3" class="form-control" placeholder="Task Description"></textarea></div>
+     <textarea id="descripcion" rows="3" class="form-control" placeholder="Description"></textarea></div>
      <button class="btn-primary" id="btn-task-form">Save</button></form>
      </div>
      </div>
@@ -25,12 +26,24 @@ export default function crearPost() {
   postContainer.innerHTML = htmlPost;
   document.getElementById("main").appendChild(postContainer);
 
+  const db = firebase.firestore();
+
   const taskForm = document.getElementById("task-form");
 
-  taskForm.addEventListener("submit", (e) => {
+  const savePost = (title, description) =>
+    db.collection("post").doc().set({
+      title,
+      description,
+    });
+
+  taskForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const title = taskForm["titulo"].value;
-    const descripcion = taskForm["description"].value;
+    const title = taskForm.titulo.value;
+    const description = taskForm.descripcion.value;
+
+    await savePost(title, description);
+
+    taskForm.reset();
   });
 }
