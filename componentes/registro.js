@@ -1,5 +1,3 @@
-/* eslint-disable quotes */
-/* eslint-disable space-before-blocks */
 export default function CrearRegistro() {
   window.location = "#registro";
   const registroUsuario = document.createElement("form");
@@ -12,7 +10,6 @@ export default function CrearRegistro() {
         <div><input type="password" class="inputIngreso" id="usuarioContrasena" placeholder="Crear contraseña" required minlength="6"/></div>
         <div><button id="btnR"> Registrarme </button></div>
         <div><button id="volver">Volver</button></div>
-
          `;
   registroUsuario.innerHTML = htmlRegitro;
   const mensajeError = document.createElement("div");
