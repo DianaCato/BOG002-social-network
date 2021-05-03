@@ -1,13 +1,13 @@
-import { nuevoIngreso } from '../firebaseController/firebaseFunctions.js';
-import { irReglas } from './redireccion.js';
+import { nuevoIngreso } from "../firebaseController/firebaseFunctions.js";
+import {irReglas} from "./redireccion.js";
 
 export default function ingresar() {
-  window.location = '#login';
-  const email = document.getElementById('usuario');
-  const contrasena = document.getElementById('contrasena');
+  window.location = "#login";
+  const email = document.getElementById("usuario");
+  const contrasena = document.getElementById("contrasena");
   // ingreso con correo y contraseña
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('#btnI')) {
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#btnI")) {
       e.preventDefault();
       nuevoIngreso(email.value, contrasena.value)
         .then(() => {
@@ -15,7 +15,7 @@ export default function ingresar() {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          document.getElementById('mesagge').innerHTML = `Se ha producido un error: ${errorMessage}`;
+          document.getElementById("mesagge").innerHTML = `Se ha producido un error: ${errorMessage}`;
         });
     }
   });

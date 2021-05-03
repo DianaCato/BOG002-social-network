@@ -1,12 +1,16 @@
-import { providerFacebook, providerGoogle } from "../firebaseController/firebaseFunctions.js";
+import {
+  crearUsuario,
+  providerFacebook,
+  providerGoogle,
+} from "../firebaseController/firebaseFunctions.js";
 import { irReglas } from "./redireccion.js";
 
 // creando cuenta de usuario
 export function registrar() {
-  const informacion = document.getElementsByClassName('formInformacion');
+  const informacion = document.getElementsByClassName("formInformacion");
 
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('#btnR')) {
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#btnR")) {
       crearUsuario(informacion[0][1].value, informacion[0][2].value)
         .then(() => {
           // Signed in
@@ -14,7 +18,7 @@ export function registrar() {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          document.getElementById('errorRegistro').innerHTML = errorMessage;
+          document.getElementById("errorRegistro").innerHTML = errorMessage;
         });
     }
   });
@@ -30,10 +34,9 @@ export function registroGoogle() {
         .then(() => {
           irReglas();
         })
-        .catch(() => {
-        });
-    };
-  })
+        .catch(() => {});
+    }
+  });
 }
 
 // registro con Facebook
@@ -46,8 +49,7 @@ export function registroFacebook() {
         .then(() => {
           irReglas();
         })
-        .catch(() => {
-        });
-    };
-  })
+        .catch(() => {});
+    }
+  });
 }

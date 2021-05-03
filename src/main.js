@@ -16,12 +16,13 @@ firebaseInitialize();
 verificarSesion();
 
 const main = document.getElementById("main");
-//main.appendChild(CrearFormulario());
+// main.appendChild(CrearFormulario());
 
 registrar();
 registroGoogle();
 registroFacebook();
 ingresar();
+cerrarSesion();
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("a")) {
@@ -44,9 +45,6 @@ document.addEventListener("click", (e) => {
   if (e.target.matches("#btnC")) {
     main.innerHTML = "";
     window.location = "#crear-publicacion";
-   crearPost();
+    crearPost();
   }
 });
-
-// cerrar sesión
-cerrarSesion();

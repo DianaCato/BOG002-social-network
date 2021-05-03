@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import CrearFormulario from "../componentes/formulario.js";
 import crearPost from "../componentes/post.js";
 import VistaReglas from "../componentes/reglas.js";
@@ -20,8 +19,7 @@ export function verificarSesion() {
       main.innerHTML = "";
       window.location = "#crear-publicacion";
       crearPost();
-    }
-    else {
+    } else {
       const main = document.getElementById("main");
       main.appendChild(CrearFormulario());
       ingresar();
@@ -32,7 +30,9 @@ export function verificarSesion() {
 export function cerrarSesion() {
   document.addEventListener("click", (e) => {
     if (e.target.matches("#signOut")) {
-      firebase.auth().signOut()
+      firebase
+        .auth()
+        .signOut()
         .then(function () {
           document.getElementById("main").innerHTML = "";
           document.getElementById("header").innerHTML = "";
@@ -40,7 +40,7 @@ export function cerrarSesion() {
         })
         .catch(function (error) {
           document.getElementById("main").innerHTML = error;
-        })
+        });
     }
-  })
+  });
 }

@@ -1,63 +1,90 @@
 body {
-    background-image: url(./img/huc.jpg);
-    background-attachment: fixed;
-    background-size: cover;
+  background-image: url(./img/huc.jpg);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .header {
   grid-area: header;
-  
 }
 
-  .grid-container {
-    display: grid;
-    grid-template-areas: 'header header header header' 'column1 main main column2' 'footer footer footer footer'
-  }
-  .grid-container div {
-    padding: 3vh; 
-    color: black;
-    text-align: center;
-     
-  }
+.grid-container {
+  display: grid;
+  grid-template-areas: "header header header header" "column1 main main column2" "footer footer footer footer";
+}
+.grid-container div {
+  padding: 3vh;
+  color: black;
+  text-align: center;
+}
 
-  .colum1 {
-    grid-area: column1;
-  }
-  
-  .main {
-     grid-area: main;
-    justify-items: center;
-    margin-top: 10vh;
-  }
-  
-  .colum2 {
-    grid-area: column2;
-  }
-  
-  .inputIngreso{
-    width: 250px;
-    display: block;
-    margin: 10px auto;
-    padding: 12px;
-    border-radius: 10px;
-    border: 0.5px solid rgb(1, 12, 15);
-  }
+.colum1 {
+  grid-area: column1;
+}
 
-    button {
-    
-    margin: 10px auto;
-    border: 0.5px solid rgb(1, 12, 15);
-    padding: 10px;
-    background: #5F4053;
-    border-radius: 10px;
-    color: rgb(1, 12, 15);
-    font-size: 16px;
-    cursor: pointer;
-  }
+.main {
+  grid-area: main;
+  justify-items: center;
+  margin-top: 10vh;
+}
 
-  button:hover {
-    color: white;
-    background-color: rgb(1, 12, 15);
+.colum2 {
+  grid-area: column2;
+}
+
+.responsive-nav {
+  display: flex;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #909799;
+}
+
+.nave {
+  font-size: 30px;
+}
+
+details {
+  display: flex;
+  justify-content: flex-start;
+    margin: auto 0 auto auto;
+}
+
+
+#logo {
+  max-height: 80px;
+  margin-left: 10px;
+  margin: auto auto auto 10px;
+}
+
+.inputIngreso {
+  width: 250px;
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 10px;
+  border: 0.5px solid rgb(1, 12, 15);
+}
+
+button {
+  margin: 10px auto;
+  border: 0.5px solid rgb(1, 12, 15);
+  padding: 10px;
+  background: #5f4053;
+  border-radius: 10px;
+  color: rgb(1, 12, 15);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: rgb(1, 12, 15);
 }
 
 p {
@@ -65,39 +92,38 @@ p {
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
-  margin-inline-end: 0px; 
-  font-size: 20px; 
+  margin-inline-end: 0px;
+  font-size: 20px;
 }
 
 #parrafos {
   font-size: 14px;
 }
 
- 
-  #btnI{
-    margin-left: 2vw;
-  }
+#btnI {
+  margin-left: 2vw;
+}
 
-  #mesagge {
-    color: red;
-  }
-  #errorRegistro {
-    color: red;
-  }
+#mesagge {
+  color: red;
+}
+#errorRegistro {
+  color: red;
+}
 
-  #botonGoogle {
-      width: 50vmin;
-    }
-  
-  #botonFacebook {
-    width: 50vmin;
-  }
+#botonGoogle {
+  width: 50vmin;
+}
 
-  .icono {
-    max-width: 25px;
-    vertical-align: middle;
-    padding: 5px;
-    display: inline-block;
+#botonFacebook {
+  width: 50vmin;
+}
+
+.icono {
+  max-width: 25px;
+  vertical-align: middle;
+  padding: 5px;
+  display: inline-block;
 }
 
 .login {
@@ -108,54 +134,49 @@ p {
   margin: 10px auto;
   width: 250px;
   cursor: pointer;
-    
 }
 
 .login p {
   margin: 1em;
   display: inline-block;
-  color: #737373
-} 
+  color: #737373;
+}
 
-.login.facebook p{
+.login.facebook p {
   margin: 1em 0.4em;
 }
 
-  form {
-    background: rgba(235, 228, 228, 0.82);
-    width: 30vw;
-    margin-left: 20vw;
-  }
-
-  #reglasHuc {
-      background-color:rgba(235, 228, 228, 0.82) ;
-      
-    }
-  
-  details {
-      width: 48vw;
-      margin-right: 0;
-  }
-  ol {
-    text-align: start;
-    justify-content: flex-start;
-    background-color: rgba(235, 228, 228, 0.82) ;
-  }
-  li {
-      padding: 2vh;
-      text-align: start;
-      margin-left: 5vw;
-  }
-#buttonReglas {
-    margin-top: 5vh;
+form {
+  background: rgba(235, 228, 228, 0.82);
+  width: 30vw;
+  margin-left: 20vw;
+  border-radius: 5%;
 }
 
-#logo {
-  max-height: 90px;
-  display: block;
-  margin-top: auto;
+#reglasHuc {
+  background-color: rgba(235, 228, 228, 0.82);
+}
+
+details {
+  width: 48vw;
+  margin-right: 0;
+}
+ol {
+  text-align: start;
+  justify-content: flex-start;
+  background-color: rgba(235, 228, 228, 0.82);
+}
+li {
+  padding: 2px;
+  text-align: center;
+
+  list-style: none;
+  background-color: #909799;
+}
+#buttonReglas {
+  margin-top: 5vh;
 }
 
 .footer {
-    grid-area: footer;
-  }
+  grid-area: footer;
+}

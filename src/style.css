@@ -26,7 +26,8 @@
     flex-direction: column;
   justify-content: space-between;
   }
-  
+
+   
   .colum1 {
     grid-area: column1;
   }
@@ -40,7 +41,7 @@
   .colum2 {
     grid-area: column2;
   }
-  
+
   .inputIngreso{
     width: 250px;
     display: block;
