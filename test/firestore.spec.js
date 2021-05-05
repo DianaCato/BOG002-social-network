@@ -1,30 +1,35 @@
-//aquí se hace el test para las funciones con firestore
- const firebase = jest.fn();
- firebase.firestore = jest.fn({
-    firestore : () => {
-        return {
-          collection: collection.mockResolvedValue('Hola mundo')
+//aquí se hace el test para las funciones con firestore  
+import MockFirebase from 'mock-cloud-firestore';
+
+const fixtureData = {
+    __collection__: {
+      post: {
+        __doc__: {
+          abc123: {
+            title: "new post",
+            description: 'Hola mundo',
+          }
         }
       }
-  }
- )    
+    }
+  };
+
+global.firebase = new MockFirebase(fixtureData, {isNaiveSnapshotListenerEnabled: true});
+
 import { savePost } from "../src/firebaseController/firestoreFunctions";
 
-global.firebase = firebase();
+const db = firebase.firestore()._data.__collection__.post.__doc__;
 
-
-test('crear un nuevo post', async () => {
-
-
-    const data = await savePost("nuevo post", "Hola mundo");
-    expect(data.title).toBe('nuevo post');
-});
-test('the data is peanut butter', async () => {
-
-    const firebase = jest.fn();
-
-    await expect(savePost("nuevo post", "Hola mundo")).resolves.toBe('Hola mundo');
-
-    spy.mockRestore();
-});
-    //await expect(savePost("nuevo post", "Hola mundo")).resolves.toBe('Hola mundo');
+describe ("savePost", () => {
+    test("savePost es una función", () => {  
+        expect(typeof savePost).toBe("function")
+        })
+    test("Se agrega una nuevo post en la colección", () => {
+        savePost('mi primer post', 'yeih!')
+        expect(Object.keys(db).length).toBe(2)
+    })
+    test("Guarda los valores enviados", ()=>{
+        savePost("mi segundo post", "se guarda")
+        expect(Object.values(db)[2].title).toBe("mi segundo post")
+    })    
+})
