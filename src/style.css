@@ -6,8 +6,7 @@
     display: grid;
     grid-template-areas: 'header header header header' 'column1 main main column2' 'footer footer footer footer'
   }
-  .grid-container div {
-    padding: 5vmin; 
+  .grid-container div { 
     color: black;
     text-align: center;
     background-color: #EDF0F2;
@@ -16,7 +15,16 @@
     grid-area: header;
     background-image: url(./img/huc.jpg);
     background-size: 100% auto; 
-    height: 25vh;
+    height: 20vh;
+    padding: 0;
+  }
+  .header div {
+    height: 20vh;
+    background-color: rgb(75, 101, 110);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  justify-content: space-between;
   }
 
    
@@ -25,10 +33,11 @@
   }
   
   .main {
+    padding: 5vh;
      grid-area: main;
     justify-items: start;
   }
-  
+
   .colum2 {
     grid-area: column2;
   }
@@ -54,15 +63,9 @@
     cursor: pointer;
   }
 
-  
-
-.registro{
-  color: rgb(1, 12, 15);
-    text-align: center;
-    margin-left: 13px;
-    margin-top: 5px;
-    cursor: pointer;
-}
+  .formInformacion div {
+    padding: 1vh;
+  }
   p {
     display: block;
     margin-block-start: 1em;
@@ -125,7 +128,45 @@ ol {
   text-align: start;  
 }
 
-.footer {
+nav {
+  background-color: rgb(75, 101, 110);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5vw;  
+  height: 15vh;
+}
+nav img {
+  margin-top: 2vh;
+  width: 25vmin;
+}
+nav li {
+  list-style: none;
+  margin-top: 5vmin;
+  border-bottom: white 1px solid;
+}
+
+nav a {
+  text-decoration: none;
+  color: #040E00;
+}
+details{
+  display: block;
+  margin-top: 5vh;
+}
+details[open] {
+  position: absolute;
+  right: 20px;
+  background-color: #B3B697;
+  height: 20vmax ;
+  width: 40vw;
+}
+
+summary{
+  background-color:  rgb(75, 101, 110);
+  display: block;
+}
+
+  .footer {
     grid-area: footer;
   }
-  
