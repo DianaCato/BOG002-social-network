@@ -2,7 +2,7 @@ import nuevoPost from "../aplicativos/crearPost.js";
 import crearHeader from "./header.js";
 
 export default function crearPost() {
-  document.body.style.backgroundColor = "#DCE0DF";
+    
   crearHeader();
   const htmlPost = `
      <div class="row">
