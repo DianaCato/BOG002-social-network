@@ -58,8 +58,8 @@ export default function savePost(title, description) {
             await savePost(title, description);
           } else {
             await updateEdit(id, {
-              title: title,
-              description: description,
+              title,
+              description,
             });
           }
         });
