@@ -2,13 +2,16 @@ export default function savePost(title, description) {
   const db = firebase.firestore();
   const taskForm = document.getElementById("task-form");
   const taskcotainer = document.getElementById("tasks-container");
+
   // borrar Post
   const borrarPost = (id) => db.collection("post").doc(id).delete();
+
   // Editar Post
   const editPost = (id) => db.collection("post").doc(id).get();
-  let editStatus = false;
-  let id = "";
-  const updateEdit = (id, updateEdit) => db.collection("post").doc(id).update(updateEdit);
+  const editStatus = false;
+  const id = "";
+  const updateEdit = () => db.collection("post").doc(id).update(updateEdit);
+
   // guardar Post
   db.collection("post").doc().set({
     title,
@@ -30,6 +33,7 @@ export default function savePost(title, description) {
           <button class="btn btn-secundario btn-edit" data-id="${tarea.id}">Editar</button>
           <div/>
           </form>`;
+
       // Borrando Post
       const btnsBorrar = document.querySelectorAll(".btn-borrar");
       btnsBorrar.forEach((btn) => {
@@ -37,6 +41,7 @@ export default function savePost(title, description) {
           await borrarPost(e.target.dataset.id);
         });
       });
+
       // Editando Post
       const btnsEditar = document.querySelectorAll(".btn-edit");
       btnsEditar.forEach((btn) => {
