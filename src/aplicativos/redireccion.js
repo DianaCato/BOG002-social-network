@@ -14,7 +14,7 @@ export function irReglas() {
 }
 
 export function verificarSesion() {
-  firebase.auth().onAuthStateChanged(function (user) {
+  firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       main.innerHTML = "";
       window.location = "#crear-publicacion";
@@ -33,12 +33,12 @@ export function cerrarSesion() {
       firebase
         .auth()
         .signOut()
-        .then(function () {
+        .then(() => {
           document.getElementById("main").innerHTML = "";
           document.getElementById("header").innerHTML = "";
           ingresar();
         })
-        .catch(function (error) {
+        .catch((error) => {
           document.getElementById("main").innerHTML = error;
         });
     }

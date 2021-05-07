@@ -8,12 +8,13 @@ export default function savePost(title, description) {
 
   // Editar Post
   const editPost = (id) => db.collection("post").doc(id).get();
-  const editStatus = false;
-  const id = "";
-  const updateEdit = () => db.collection("post").doc(id).update(updateEdit);
+  let editStatus = false;
+  let id = "";
+  const updateEdit = () =>
+    db.collection("post").doc(id).update(updateEdit);
 
   // guardar Post
-  db.collection("post").doc().set({
+  db.collection("post").add({
     title,
     description,
   });
@@ -55,11 +56,9 @@ export default function savePost(title, description) {
           taskForm["btn-task-form"].innerText = "Editar";
 
           if (!editStatus) {
-            await savePost(title, description);
-          } else {
             await updateEdit(id, {
-              title: title,
-              description: description,
+              title,
+              description,
             });
           }
         });
