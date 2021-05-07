@@ -1,4 +1,4 @@
-import nuevoPost from "../aplicativos/crearPost.js";
+import { nuevoPost, crud, snapshotData } from "../aplicativos/crearPost.js";
 import crearHeader from "./header.js";
 
 export default function crearPost() {
@@ -6,15 +6,16 @@ export default function crearPost() {
   crearHeader();
   const htmlPost = `
      <div class="row">
-     <div class="card">
-     <div class="card-body">       
+     <div id="card">
+     <div id="card-body">       
      <form id="task-form">
-     <div class="form-group">
+     <div id="form-group">
      <input type="text" id="titulo" class="form-control" placeholder="Title">
      </div>
-     <div class="form-group">
+     <div id="form-group">
      <textarea id="descripcion" rows="3" class="form-control" placeholder="Description"></textarea></div>
-     <button class="btn-primary" id="btn-task-form">Save</button></form>
+     <button class="btn-primary" id="btn-task-form" >Save</button>
+     <button class="btn-primary" id="btn-task-edit" style="display:none">Editar</button></form>
      </div>
      </div>
       <!-- Tasks List -->
@@ -26,4 +27,6 @@ export default function crearPost() {
   postContainer.innerHTML = htmlPost;
   document.getElementById("main").appendChild(postContainer);
   nuevoPost();
+  snapshotData();
+  crud();
 }
