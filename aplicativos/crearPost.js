@@ -4,7 +4,6 @@ export function nuevoPost() {
   const taskForm = document.getElementById("task-form");
 
   document.addEventListener("click", async (e) => {
-    e.preventDefault();
     if (e.target.matches("#btn-task-form")){
       const title = taskForm.titulo.value;
       const description = taskForm.descripcion.value;
