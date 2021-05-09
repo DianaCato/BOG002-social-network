@@ -57,7 +57,7 @@ export function router() {
          break;
       case "#crear-publicacion":
         console.log("puedes crear una publicacion");
-        document.body.className ="other";
+        //document.body.className ="other";
         break;
       default:
         handleDefaultCase();
