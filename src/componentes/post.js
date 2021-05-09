@@ -1,9 +1,9 @@
 import { nuevoPost, crud, snapshotData } from "../aplicativos/crearPost.js";
 import crearHeader from "./header.js";
 
-export default function crearPost() {
-  document.body.style.backgroundColor = "#DCE0DF";
-  crearHeader();
+export default function crearPost(nick) {
+    
+  crearHeader(nick);
   const htmlPost = `
      <div class="row">
      <div id="card">
@@ -26,7 +26,7 @@ export default function crearPost() {
   const postContainer = document.createElement("div");
   postContainer.innerHTML = htmlPost;
   document.getElementById("main").appendChild(postContainer);
-  nuevoPost();
+  nuevoPost(nick);
   snapshotData();
   crud();
 }

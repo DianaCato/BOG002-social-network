@@ -3,7 +3,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
+.other {
+  background-image: linear-gradient(rgba(215, 208, 208, 0.95),rgba(215, 208, 208, 0.95)), url(./img/huc.jpg);
+}
 .header {
   grid-area: header;
 }
@@ -145,13 +147,14 @@ p {
 .login.facebook p {
   margin: 1em 0.4em;
 }
+
 form {
   background: rgba(235, 228, 228, 0.82);
   width: 30vw;
   margin-left: 20vw;
-   border-radius: 5%;
+  border-radius: 5%;
 }
-  
+
 #reglasHuc {
   background-color: rgba(235, 228, 228, 0.82);
 }
