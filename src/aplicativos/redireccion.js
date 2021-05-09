@@ -18,7 +18,7 @@ export function verificarSesion() {
     if (user) {
       main.innerHTML = "";
       window.location = "#crear-publicacion";
-      crearPost();
+      crearPost(user.displayName);
     } else {
       const main = document.getElementById("main");
       main.appendChild(CrearFormulario());

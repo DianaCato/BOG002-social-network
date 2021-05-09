@@ -8,6 +8,7 @@ const fixtureData = {
           abc123: {
             title: "new post",
             description: 'Hola mundo',
+            author: "User",
           }
         }
       }
@@ -25,11 +26,11 @@ describe ("savePost", () => {
         expect(typeof savePost).toBe("function")
         })
     test("Se agrega una nuevo post en la colección", () => {
-        savePost('mi primer post', 'yeih!')
+        savePost('mi primer post', 'yeih!', "Lulú")
         expect(Object.keys(db).length).toBe(2)
     })
     test("Guarda los valores enviados", ()=>{
-        savePost("mi segundo post", "se guarda")
+        savePost("mi segundo post", "se guarda", "Pepito")
         expect(Object.values(db)[2].title).toBe("mi segundo post")
     })    
 })

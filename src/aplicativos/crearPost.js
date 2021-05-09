@@ -1,14 +1,15 @@
 import { savePost, borrarPost, editPost, updateEdit } from "../firebaseController/firestoreFunctions.js";
 
-export function nuevoPost() {
+export function nuevoPost(name) {
   const taskForm = document.getElementById("task-form");
 
   document.addEventListener("click", async (e) => {
     if (e.target.matches("#btn-task-form")){
       const title = taskForm.titulo.value;
       const description = taskForm.descripcion.value;
+      const author = name;
   
-      await savePost(title, description);
+      await savePost(title, description, author);
   
       taskForm.reset();
     }
@@ -16,6 +17,8 @@ export function nuevoPost() {
 }
 
 export function snapshotData() {
+  const user = firebase.auth().currentUser;
+  console.log(user);
   const taskcotainer = document.getElementById("tasks-container");
   const db = firebase.firestore();
   db.collection("post").onSnapshot((querySnapshot) => {
@@ -23,16 +26,28 @@ export function snapshotData() {
     querySnapshot.forEach((doc) => {
       const tarea = doc.data();
       tarea.id = doc.id;
-
+     if (user.displayName != tarea.author){
+        taskcotainer.innerHTML += `<form class="post-form">
+      <div>
+        <h3>${tarea.title}</h3>
+        <p>${tarea.description}</p>
+        <p><i> Autor: ${tarea.author}</i></p>
+        <button class="btn-reaccion" data-id="${tarea.id}">Me interesa</button>
+        <div/>
+        </form>`;
+     }
+     else{
       taskcotainer.innerHTML += `<form class="post-form">
-        <div>
-          <h3>${tarea.title}</h3>
-          <p>${tarea.description}</p>
-          <button class="btn-borrar" data-id="${tarea.id}">Eliminar</button>
-          <button class="btn-edit" data-id="${tarea.id}">Editar</button>
-          <div/>
-          </form>`;
-
+      <div>
+        <h3>${tarea.title}</h3>
+        <p>${tarea.description}</p>
+        <p><i> Autor: ${tarea.author}</i></p>
+        <button class="btn-borrar" data-id="${tarea.id}">Eliminar</button>
+        <button class="btn-edit" data-id="${tarea.id}">Editar</button>
+        <div/>
+        </form>`;
+     }
+      
     })
   })
 }
