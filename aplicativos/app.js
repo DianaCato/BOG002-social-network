@@ -3,6 +3,7 @@ import {
   providerFacebook,
   providerGoogle,
 } from "../firebaseController/firebaseFunctions.js";
+import upDateUser from "./datosPerfil.js";
 import { irReglas } from "./redireccion.js";
 
 // creando cuenta de usuario
@@ -14,6 +15,7 @@ export function registrar() {
       crearUsuario(informacion[0][1].value, informacion[0][2].value)
         .then(() => {
           // Signed in
+          upDateUser(informacion[0][0].value);
           irReglas();
         })
         .catch((error) => {
