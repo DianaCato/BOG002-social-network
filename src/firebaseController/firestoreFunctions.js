@@ -1,8 +1,10 @@
-export function savePost(title, description) {
+export function savePost(title, description, author, urlImg) {
   const db = firebase.firestore();
   db.collection("post").doc().set({
     title,
     description,
+    author,
+    urlImg,
   });
 }
 // borrar Post

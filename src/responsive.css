@@ -3,7 +3,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
+.other {
+  background-image: linear-gradient(rgba(215, 208, 208, 0.95),rgba(215, 208, 208, 0.95)), url(./img/huc.jpg);
+}
 .header {
   grid-area: header;
 }
@@ -145,46 +147,14 @@ p {
 .login.facebook p {
   margin: 1em 0.4em;
 }
+
 form {
   background: rgba(235, 228, 228, 0.82);
   width: 30vw;
   margin-left: 20vw;
-   border-radius: 5%;
+  border-radius: 5%;
 }
 
-#task-form{
-  width: 80%;
-    min-height: 20%;
-    margin: 5% auto;
-    padding: 2%;
-    border: 1px solid rgb(33, 126, 156);
-    background-color: whitesmoke;
-    border-radius: 10px;
-}
-
-.post-form {
-    width: 90%;
-    min-height: 5%;
-    margin: 2% auto;
-    padding: 1%;
-    border: 1px solid rgb(33, 126, 156);
-    background-color: whitesmoke;
-    border-radius: 10px;
-}
-
-.btn-borrar{
-  size: 5px;
-    margin-top: 5px;
-    margin-left: 30px;
-    cursor: pointer;
-}
-.btn-edit{
-  size: 5px;
-    margin-top: 5px;
-    margin-left: 30px;
-    cursor: pointer;
-}
-  
 #reglasHuc {
   background-color: rgba(235, 228, 228, 0.82);
 }

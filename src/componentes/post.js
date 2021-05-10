@@ -1,9 +1,8 @@
 import { nuevoPost, crud, snapshotData } from "../aplicativos/crearPost.js";
 import crearHeader from "./header.js";
 
-export default function crearPost() {
-  document.body.style.backgroundColor = "#DCE0DF";
-  crearHeader();
+export default function crearPost(nick) {
+  crearHeader(nick);
   const htmlPost = `
      <div class="row">
      <div id="card">
@@ -14,6 +13,8 @@ export default function crearPost() {
      </div>
      <div id="form-group">
      <textarea id="descripcion" rows="3" class="form-control" placeholder="Description"></textarea></div>
+     <progress value="0" max="100" id="uploader">0%</progress>
+      <input type="file" value="upload" id="fileButton" />
      <button class="btn-primary" id="btn-task-form" >Save</button>
      <button class="btn-primary" id="btn-task-edit" style="display:none">Editar</button></form>
      </div>
@@ -26,7 +27,7 @@ export default function crearPost() {
   const postContainer = document.createElement("div");
   postContainer.innerHTML = htmlPost;
   document.getElementById("main").appendChild(postContainer);
-  nuevoPost();
+  nuevoPost(nick);
   snapshotData();
   crud();
 }
