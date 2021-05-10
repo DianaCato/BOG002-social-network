@@ -4,7 +4,7 @@ import {
   editPost,
   updateEdit,
 } from "../firebaseController/firestoreFunctions.js";
-//import imgPost from "./picturePost.js";
+// import imgPost from "./picturePost.js";
 
 export function nuevoPost(name) {
   const taskForm = document.getElementById("task-form");
@@ -16,7 +16,6 @@ export function nuevoPost(name) {
 
   // Vigilar selección archivo
   fileButton.addEventListener("change", function (e) {
-
     // Obtener archivo
     const file = e.target.files[0];
 
@@ -24,7 +23,7 @@ export function nuevoPost(name) {
     const storageRef = firebase.storage().ref("mis_fotos/" + file.name);
 
     // Subir archivo
-     task = storageRef.put(file);
+    task = storageRef.put(file);
 
     // Actualizar barra progreso
     task.on(
@@ -38,8 +37,8 @@ export function nuevoPost(name) {
       function complete() {
         console.log("completado");
         storageRef.getDownloadURL().then((img) => {
-       imgUrl = img;
-       });
+          imgUrl = img;
+        });
       }
     );
   });
@@ -58,7 +57,6 @@ export function nuevoPost(name) {
     }
   });
 }
-
 
 export function crud() {
   const taskForm = document.getElementById("task-form");

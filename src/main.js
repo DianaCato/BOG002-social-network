@@ -9,7 +9,7 @@ import ingresar from "./aplicativos/ingreso.js";
 import CrearRegistro from "./componentes/registro.js";
 import firebaseInitialize from "./firebaseController/firebaseConfig.js";
 import crearPost from "./componentes/post.js";
-import { cerrarSesion, router, verificarSesion } from "./aplicativos/redireccion.js";
+import { cerrarSesion, verificarSesion } from "./aplicativos/redireccion.js";
 
 firebaseInitialize();
 
@@ -18,7 +18,6 @@ verificarSesion();
 const main = document.getElementById("main");
 // main.appendChild(CrearFormulario());
 
-router();
 registrar();
 registroGoogle();
 registroFacebook();

@@ -11,7 +11,7 @@ export default function snapshotData() {
     querySnapshot.forEach((doc) => {
       const tarea = doc.data();
       const listado = tarea.reaction;
-      console.log(listado)
+      // console.log(listado)
       tarea.id = doc.id;
       if (user.displayName != tarea.author) {
         taskcotainer.innerHTML += `<form class="post-form">
