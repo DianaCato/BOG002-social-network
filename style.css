@@ -1,68 +1,48 @@
-body {
-  background-image: url(./img/huc.jpg);
-  background-attachment: fixed;
-  background-size: cover;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-.header {
-  grid-area: header;
-}
-
 .grid-container {
   display: grid;
-  grid-template-areas: "header header header header" "column1 main main column2" "footer footer footer footer";
+  grid-template-areas: 'header header header header' 'column1 main main column2' 'footer footer footer footer'
 }
-.grid-container div {
-  padding: 3vh;
+.grid-container div { 
   color: black;
   text-align: center;
+  background-color: #EDF0F2;
+}
+.header {
+  grid-area: header;
+  background-image: url(./img/huc.jpg);
+  background-size: 100% auto; 
+  height: 20vh;
+  padding: 0;
+}
+.header div {
+  height: 20vh;
+  background-color: rgb(75, 101, 110);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
 }
 
+ 
 .colum1 {
   grid-area: column1;
 }
 
 .main {
-  grid-area: main;
-  justify-items: center;
-  margin-top: 10vh;
+  padding: 5vh;
+   grid-area: main;
+  justify-items: start;
 }
 
 .colum2 {
   grid-area: column2;
 }
 
-.responsive-nav {
-  display: flex;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background-color: #909799;
-}
-
-.nave {
-  font-size: 30px;
-}
-
-details {
-  display: flex;
-  justify-content: flex-start;
-    margin: auto 0 auto auto;
-}
-
-
-#logo {
-  max-height: 80px;
-  margin-left: 10px;
-  margin: auto auto auto 10px;
-}
-
-.inputIngreso {
+.inputIngreso{
   width: 250px;
   display: block;
   margin: 10px auto;
@@ -72,37 +52,33 @@ details {
 }
 
 button {
+  display: block;
   margin: 10px auto;
   border: 0.5px solid rgb(1, 12, 15);
   padding: 10px;
-  background: #5f4053;
+  background: #5F4053;
   border-radius: 10px;
   color: rgb(1, 12, 15);
   font-size: 16px;
   cursor: pointer;
 }
 
-button:hover {
-  color: white;
-  background-color: rgb(1, 12, 15);
+.formInformacion div {
+  padding: 1vh;
 }
-
 p {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-size: 20px;
+  margin-inline-end: 0px; 
+  font-size: 20px;   
 }
 
 #parrafos {
   font-size: 14px;
 }
 
-#btnI {
-  margin-left: 2vw;
-}
 
 #mesagge {
   color: red;
@@ -112,8 +88,8 @@ p {
 }
 
 #botonGoogle {
-  width: 50vmin;
-}
+    width: 50vmin;
+  }
 
 #botonFacebook {
   width: 50vmin;
@@ -127,53 +103,68 @@ p {
 }
 
 .login {
-  padding: 0 10px;
-  background-color: white;
-  display: block;
-  border-radius: 10px;
-  margin: 10px auto;
-  width: 250px;
-  cursor: pointer;
+padding: 0 10px;
+background-color: white;
+display: block;
+border-radius: 10px;
+margin: 10px auto;
+width: 250px;
+   
 }
+
 
 .login p {
-  margin: 1em;
-  display: inline-block;
-  color: #737373;
+margin: 1em;
+display: inline-block;
+color: #737373;
+font-size: 20px;
+} 
+
+.login.facebook p{
+margin: 1em 0.4em;
 }
 
-.login.facebook p {
-  margin: 1em 0.4em;
-}
-form {
-  background: rgba(235, 228, 228, 0.82);
-  width: 30vw;
-  margin-left: 20vw;
-   border-radius: 5%;
-}
-  
-#reglasHuc {
-  background-color: rgba(235, 228, 228, 0.82);
-}
-
-details {
-  width: 48vw;
-  margin-right: 0;
-}
 ol {
-  text-align: start;
-  justify-content: flex-start;
-  background-color: rgba(235, 228, 228, 0.82);
+text-align: start;  
 }
-li {
-  padding: 2px;
-  text-align: center;
 
-  list-style: none;
-  background-color: #909799;
+nav {
+background-color: rgb(75, 101, 110);
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding: 0 5vw;  
+height: 15vh;
 }
-#buttonReglas {
-  margin-top: 5vh;
+nav img {
+margin-top: 2vh;
+width: 25vmin;
+}
+nav li {
+list-style: none;
+margin-top: 5vmin;
+border-bottom: white 1px solid;
+}
+
+nav a {
+text-decoration: none;
+color: #040E00;
+}
+details{
+display: block;
+margin-top: 5vh;
+}
+details[open] {
+position: absolute;
+right: 20px;
+background-color: #B3B697;
+height: 20vmax ;
+width: 40vw;
+}
+
+summary{
+background-color:  rgb(75, 101, 110);
+display: block;
 }
 
 .footer {
