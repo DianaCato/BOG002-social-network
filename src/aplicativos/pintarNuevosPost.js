@@ -1,8 +1,7 @@
-import reaccion from "./like.js";
+//import reaccion from "./like.js";
 
 export default function snapshotData() {
   const user = firebase.auth().currentUser;
-  reaccion();
   // console.log(user);
   const taskcotainer = document.getElementById("tasks-container");
   const db = firebase.firestore();
@@ -11,7 +10,6 @@ export default function snapshotData() {
     querySnapshot.forEach((doc) => {
       const tarea = doc.data();
       const listado = tarea.reaction;
-      console.log(listado)
       tarea.id = doc.id;
       if (user.displayName != tarea.author) {
         taskcotainer.innerHTML += `<form class="post-form">
