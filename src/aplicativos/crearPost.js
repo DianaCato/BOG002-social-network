@@ -5,6 +5,7 @@ export function nuevoPost(name) {
 
   document.addEventListener("click", async (e) => {
     if (e.target.matches("#btn-task-form")){
+      e.preventDefault();
       const title = taskForm.titulo.value;
       const description = taskForm.descripcion.value;
       const author = name;
