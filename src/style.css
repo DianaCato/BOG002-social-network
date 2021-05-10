@@ -21,11 +21,10 @@
 .header div {
   height: 20vh;
   background-color: rgb(75, 101, 110);
-  width: 100vw;
+  width: 110vw;
   display: flex;
   flex-direction: column;
 justify-content: space-between;
-z-index: 2;
 }
 
  
@@ -163,7 +162,7 @@ position: absolute;
 right: 20px;
 background-color: #B3B697;
 height: 18.5vmax ;
-width: 30vw;
+width: 35vw;
 }
 
 summary{
@@ -172,10 +171,52 @@ display: block;
 }
 
 #task-form {
-  
-  border: solid 1px red;
-  padding: 5px;
+  background-color: #DCE0DF;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 95%;
+}
 
+#task-form textarea {
+  margin-top: 2vh;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;  
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 .footer {
   grid-area: footer;
