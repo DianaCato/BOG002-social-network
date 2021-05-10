@@ -1,17 +1,23 @@
-import { savePost, borrarPost, editPost, updateEdit } from "../firebaseController/firestoreFunctions.js";
+import {
+  savePost,
+  borrarPost,
+  editPost,
+  updateEdit,
+} from "../firebaseController/firestoreFunctions.js";
+import imgPost from "./picturePost.js";
 
 export function nuevoPost(name) {
   const taskForm = document.getElementById("task-form");
 
   document.addEventListener("click", async (e) => {
-    if (e.target.matches("#btn-task-form")){
+    if (e.target.matches("#btn-task-form")) {
       e.preventDefault();
       const title = taskForm.titulo.value;
       const description = taskForm.descripcion.value;
       const author = name;
-  
-      await savePost(title, description, author);
-  
+      const urlImg = imgPost();
+      await savePost(title, description, author, urlImg);
+
       taskForm.reset();
     }
   });
@@ -19,7 +25,7 @@ export function nuevoPost(name) {
 
 export function snapshotData() {
   const user = firebase.auth().currentUser;
-  console.log(user);
+  // console.log(user);
   const taskcotainer = document.getElementById("tasks-container");
   const db = firebase.firestore();
   db.collection("post").onSnapshot((querySnapshot) => {
@@ -27,7 +33,7 @@ export function snapshotData() {
     querySnapshot.forEach((doc) => {
       const tarea = doc.data();
       tarea.id = doc.id;
-     if (user.displayName != tarea.author){
+      if (user.displayName != tarea.author) {
         taskcotainer.innerHTML += `<form class="post-form">
       <div>
         <h3>${tarea.title}</h3>
@@ -36,9 +42,8 @@ export function snapshotData() {
         <button class="btn-reaccion" data-id="${tarea.id}">Me interesa</button>
         <div/>
         </form>`;
-     }
-     else{
-      taskcotainer.innerHTML += `<form class="post-form">
+      } else {
+        taskcotainer.innerHTML += `<form class="post-form">
       <div>
         <h3>${tarea.title}</h3>
         <p>${tarea.description}</p>
@@ -47,10 +52,9 @@ export function snapshotData() {
         <button class="btn-edit" data-id="${tarea.id}">Editar</button>
         <div/>
         </form>`;
-     }
-      
-    })
-  })
+      }
+    });
+  });
 }
 
 export function crud() {
@@ -62,7 +66,7 @@ export function crud() {
     if (e.target.matches(".btn-borrar")) {
       borrarPost(e.target.dataset.id);
     }
-  })
+  });
 
   // Editando Post
 
@@ -76,17 +80,17 @@ export function crud() {
       taskForm["btn-task-edit"].style = "display:block";
       taskForm["btn-task-form"].style = "display:none";
       document.addEventListener("click", async (e) => {
-        if (e.target.matches("#btn-task-edit")){
+        if (e.target.matches("#btn-task-edit")) {
           await updateEdit(id, {
             title: taskForm.titulo.value,
-            description: taskForm.descripcion.value 
+            description: taskForm.descripcion.value,
           });
           taskForm.reset();
           taskForm["btn-task-edit"].style = "display:none";
           taskForm["btn-task-form"].style = "display:block";
           id = "";
         }
-      })
+      });
     }
-  })
+  });
 }
