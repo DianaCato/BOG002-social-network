@@ -1,8 +1,9 @@
 export default function CrearFormulario() {
   const formulario = document.createElement('form');
+  formulario.className = "login-form";
 
   const html = `
-    <div>
+    <div >
     <p>Si ya tienes cuenta, inicia sesión!</p>
     <input type="email" class="inputIngreso" id="usuario" placeholder="Ingresar correo" required/>
             <input type="password" class="inputIngreso" id="contrasena" placeholder="Ingresar contraseña" 

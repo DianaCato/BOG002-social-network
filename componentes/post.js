@@ -1,19 +1,19 @@
-import { nuevoPost, crud, snapshotData } from "../aplicativos/crearPost.js";
+import { nuevoPost, crud } from "../aplicativos/crearPost.js";
+import reaccion from "../aplicativos/like.js";
+import snapshotData from "../aplicativos/pintarNuevosPost.js";
 import crearHeader from "./header.js";
 
 export default function crearPost(nick) {
-    
   crearHeader(nick);
   const htmlPost = `
      <div class="row">
      <div id="card">
      <div id="card-body">       
      <form id="task-form">
-     <div id="form-group">
      <input type="text" id="titulo" class="form-control" placeholder="Title">
-     </div>
-     <div id="form-group">
-     <textarea id="descripcion" rows="3" class="form-control" placeholder="Description"></textarea></div>
+     <textarea id="descripcion" rows="3" class="form-control" placeholder="Description"></textarea>
+     <progress value="0" max="100" id="uploader">0%</progress>
+     <input type="file" value="upload" id="fileButton" />
      <button class="btn-primary" id="btn-task-form" >Save</button>
      <button class="btn-primary" id="btn-task-edit" style="display:none">Editar</button></form>
      </div>
@@ -29,4 +29,5 @@ export default function crearPost(nick) {
   nuevoPost(nick);
   snapshotData();
   crud();
+  reaccion();
 }
