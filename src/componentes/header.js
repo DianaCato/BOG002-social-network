@@ -6,8 +6,7 @@ export default function crearHeader(nick) {
     <details class="menu">  
       <summary class="nave"> ${nick}</summary>
         <ul>
-          <li><a href='#crear-publicacion'> Aportar</a></li>
-          <li><a href='#social'> Social</a></li>    
+           
           <li id="signOut"> Salir</li>
         </ul>
    </details>     

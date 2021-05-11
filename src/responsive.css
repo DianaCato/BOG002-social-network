@@ -44,7 +44,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100px;
-  background-color: #909799;
+  background-color: #E4A2A1;
 }
 
 .nave {
@@ -155,6 +155,14 @@ form {
   border-radius: 5%;
 }
 
+.post-form{
+  /*margin-bottom: 10px; */
+  width: 80%;
+  margin: 5% auto;
+  padding: 2%;
+  border-radius: 10px;
+}
+
 #reglasHuc {
   background-color: rgba(235, 228, 228, 0.82);
 }
@@ -169,11 +177,12 @@ ol {
   background-color: rgba(235, 228, 228, 0.82);
 }
 li {
+  display: inline;
   padding: 2px;
   text-align: center;
-
   list-style: none;
-  background-color: #909799;
+  text-decoration: none;
+  background-color: #E4A2A1;
 }
 #buttonReglas {
   margin-top: 5vh;

@@ -10,6 +10,7 @@ import CrearRegistro from "./componentes/registro.js";
 import firebaseInitialize from "./firebaseController/firebaseConfig.js";
 import crearPost from "./componentes/post.js";
 import { cerrarSesion, verificarSesion } from "./aplicativos/redireccion.js";
+import reaccion from "./aplicativos/like.js";
 
 firebaseInitialize();
 
