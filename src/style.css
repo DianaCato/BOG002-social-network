@@ -181,6 +181,24 @@ display: block;
 #task-form textarea {
   margin-top: 2vh;
 }
+
+.post-form div{
+  margin: 10px 0 10px 0;
+  background-color: rgba(169, 188, 194, 0.685); 
+}
+.post-form img {
+  margin: 10px 0 10px 0;
+  width: 75vw;
+  height: 40vw;
+}
+.contenido {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.post-form button {
+ padding: 10px;
+}
 .tooltip {
   position: relative;
   display: inline-block;

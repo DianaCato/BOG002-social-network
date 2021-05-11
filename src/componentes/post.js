@@ -13,7 +13,7 @@ export default function crearPost(nick) {
      <input type="text" id="titulo" class="form-control" placeholder="Title">
      <textarea id="descripcion" rows="3" class="form-control" placeholder="Description"></textarea>
      <progress value="0" max="100" id="uploader">0%</progress>
-      <input type="file" value="upload" id="fileButton" />
+     <input type="file" value="upload" id="fileButton" />
      <button class="btn-primary" id="btn-task-form" >Save</button>
      <button class="btn-primary" id="btn-task-edit" style="display:none">Editar</button></form>
      </div>

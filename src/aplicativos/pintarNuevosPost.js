@@ -9,15 +9,16 @@ export default function snapshotData() {
     taskcotainer.innerHTML = "";
     querySnapshot.forEach((doc) => {
       const tarea = doc.data();
-      const listado = tarea.reaction;
+      let listado = tarea.reaction;
+      listado = listado.join(" ");
       tarea.id = doc.id;
       if (user.displayName != tarea.author) {
         taskcotainer.innerHTML += `<form class="post-form">
       <div>
-        <h3>${tarea.title}</h3>
-        <img src=${tarea.urlImg} alt="Foto del artículo" width="200" height="100">
-        <p>${tarea.description}</p>
-        <p><i> Autor: ${tarea.author}</i></p>
+        <h2>${tarea.title}</h2>
+        <img src=${tarea.urlImg} alt="Foto del artículo" >
+        <p class="contenido"  align="left">${tarea.description}</p>
+        <p class="author"><i> Autor: ${tarea.author}</i></p>
         <div class="tooltip"><p class="mostrarReaccion">Han reaccionado ${tarea.count} personas </p>
         <span class="tooltiptext">${listado}</span>
         </div><br>
@@ -27,10 +28,10 @@ export default function snapshotData() {
       } else {
         taskcotainer.innerHTML += `<form class="post-form">
       <div>
-        <h3>${tarea.title}</h3>
-        <img src=${tarea.urlImg} alt="Foto del artículo" width="200" height="100">
-        <p>${tarea.description}</p>
-        <p><i> Autor: ${tarea.author}</i></p>
+        <h2>${tarea.title}</h2>
+        <img src=${tarea.urlImg} alt="Foto del artículo" >
+        <p class="contenido"  align="left">${tarea.description}</p>
+        <p class="author"><i> Autor: ${tarea.author}</i></p>
         <div class="tooltip"><p class="mostrarReaccion">Han reaccionado ${tarea.count} personas </p>
         <span class="tooltiptext">${listado}</span>
         </div><br>

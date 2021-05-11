@@ -6,7 +6,7 @@ export function savePost(title, description, author, urlImg) {
     author,
     urlImg,
     count:0,
-    reaction:["N.N"],
+    reaction:[""],
   });
 }
 // borrar Post

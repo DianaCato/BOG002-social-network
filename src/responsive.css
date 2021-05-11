@@ -137,6 +137,9 @@ p {
   width: 250px;
   cursor: pointer;
 }
+.login-form {
+  margin-left: 20vw;
+}
 
 .login p {
   margin: 1em;
@@ -151,7 +154,7 @@ p {
 form {
   background: rgba(235, 228, 228, 0.82);
   width: 30vw;
-  margin-left: 20vw;
+  /*margin-left: 20vw;*/
   border-radius: 5%;
 }
 
@@ -186,31 +189,47 @@ li {
 #task-form textarea {
   margin-top: 2vh;
 }
+.post-form div{
+  margin: 10px 0 10px 0;
+  background-color: rgba(235, 228, 228, 1); 
+  width: 60vw;
+}
+.post-form div div {
+  width: 57vw;
+}
+.post-form img {
+  width: 60%;
+  height: 40vh;
+}
+.post-form .contenido {
+  margin-left: 50px;
+  margin-right: 50px;
+}
 .tooltip {
-  position: relative;
-  display: inline-block;
+  /*position: relative;
+  display: inline-block;*/
   border-bottom: 1px dotted black;  
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 100px;
   background-color: #555;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  position: absolute;
-  z-index: 1;
+  /*position: absolute;*/
+  /*z-index: 1;*/
   bottom: 125%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -40px;
   opacity: 0;
   transition: opacity 0.3s;
 }
 .tooltip .tooltiptext::after {
   content: "";
-  position: absolute;
+ /* position: absolute;*/
   top: 100%;
   left: 50%;
   margin-left: -5px;
