@@ -7,14 +7,15 @@ export function router() {
       switch (location.hash) {
         case "#login":
           //document.body.classList.remove("other");
+          document.getElementById("main").innerHTML = "";
+          document.getElementById("header").innerHTML = "";
           verificarSesion();
           break;
         case "#registro":
             CrearRegistro();
-          console.log("estas en registro");
           break;
         case "#reglas":
-             irReglas();
+          irReglas();
           break;
         case "#wall":
           verificarSesion();

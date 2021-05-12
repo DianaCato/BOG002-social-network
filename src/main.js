@@ -37,6 +37,7 @@ document.addEventListener("click", (e) => {
 // BOTON QUE VUELVE AL LOGIN
 document.addEventListener("click", (e) => {
   if (e.target.matches("#volver")) {
+    e.preventDefault();
     window.location = "#login";
   }
 });
