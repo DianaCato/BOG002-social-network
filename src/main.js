@@ -9,8 +9,9 @@ import ingresar from "./aplicativos/ingreso.js";
 import CrearRegistro from "./componentes/registro.js";
 import firebaseInitialize from "./firebaseController/firebaseConfig.js";
 import crearPost from "./componentes/post.js";
-import { cerrarSesion, router, verificarSesion } from "./aplicativos/redireccion.js";
+import { cerrarSesion, verificarSesion } from "./aplicativos/redireccion.js";
 import reaccion from "./aplicativos/like.js";
+import { router } from "./router.js";
 
 firebaseInitialize();
 
@@ -29,16 +30,14 @@ cerrarSesion();
 document.addEventListener("click", (e) => {
   if (e.target.matches("a")) {
     // window.location.assign('registro');
-    CrearRegistro();
+    window.location ="#registro";
   }
 });
 
 // BOTON QUE VUELVE AL LOGIN
 document.addEventListener("click", (e) => {
   if (e.target.matches("#volver")) {
-    main.innerHTML = "";
     window.location = "#login";
-    main.appendChild(CrearFormulario());
   }
 });
 
@@ -46,7 +45,7 @@ document.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   if (e.target.matches("#btnC")) {
     main.innerHTML = "";
-    window.location = "#crear-publicacion";
+    window.location = "#wall";
     crearPost();
   }
 });

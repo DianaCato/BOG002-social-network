@@ -1,5 +1,5 @@
 export default function CrearRegistro() {
-  window.location = "#registro";
+  
   const registroUsuario = document.createElement("form");
   registroUsuario.setAttribute("class", "formInformacion");
 

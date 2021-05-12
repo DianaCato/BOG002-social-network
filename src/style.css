@@ -236,6 +236,21 @@ display: block;
   visibility: visible;
   opacity: 1;
 }
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100vw;
+  height: 100vh; 
+  background-image: url("img/error.jpg"); 
+  background-size: cover; 
+  background-position: center center;
+}
+
+.error button {
+  margin-bottom: 80px;
+  color: white;
+}
 .footer {
   grid-area: footer;
 }

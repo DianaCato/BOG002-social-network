@@ -17,7 +17,7 @@ export function verificarSesion() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       main.innerHTML = "";
-      window.location = "#crear-publicacion";
+      window.location = "#wall";
       crearPost(user.displayName);
     } else {
       const main = document.getElementById("main");
@@ -41,26 +41,6 @@ export function cerrarSesion() {
         .catch((error) => {
           document.getElementById("main").innerHTML = error;
         });
-    }
-  });
-}
-
-export function router() {
-  window.addEventListener("hashchange", function () {
-    switch (location.hash) {
-      case "#login":
-        // console.log("estas en login");
-        document.body.classList.remove("other");
-        break;
-      case "#registro":
-        console.log("estas en registro");
-        break;
-      case "#crear-publicacion":
-        // console.log("puedes crear una publicacion");
-        //document.body.className ="other";
-        break;
-      default:
-        handleDefaultCase();
     }
   });
 }
